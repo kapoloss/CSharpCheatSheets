@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{9762BA4C-D5B0-416C-96F8-CC699E856EF0}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Others</RootNamespace>
+        <AssemblyName>Others</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>10</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.CSharp" />
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Xml" />
+        <Reference Include="UnityEngine">
+            <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Assembly.cs">
+          <DependentUpon>Reflection</DependentUpon>
+        </Compile>
+        <Compile Include="ExtensionMethods.cs" />
+        <Compile Include="Fixed.cs">
+          <DependentUpon>UnsafeCode_Pointers</DependentUpon>
+        </Compile>
+        <Compile Include="GenericClass.cs">
+          <DependentUpon>GenericTypes_Methods</DependentUpon>
+        </Compile>
+        <Compile Include="GenericMethods.cs">
+          <DependentUpon>GenericTypes_Methods</DependentUpon>
+        </Compile>
+        <Compile Include="MethodInfo.cs">
+          <DependentUpon>Reflection</DependentUpon>
+        </Compile>
+        <Compile Include="Operators.cs" />
+        <Compile Include="PatternMatching.cs" />
+        <Compile Include="Pointer.cs">
+          <DependentUpon>UnsafeCode_Pointers</DependentUpon>
+        </Compile>
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="PropertyInfo.cs">
+          <DependentUpon>Reflection</DependentUpon>
+        </Compile>
+        <Compile Include="Reflection.cs">
+          <DependentUpon>Reflection</DependentUpon>
+        </Compile>
+        <Compile Include="Stackalloc.cs">
+          <DependentUpon>UnsafeCode_Pointers</DependentUpon>
+        </Compile>
+        <Compile Include="Static.cs">
+          <DependentUpon>Static</DependentUpon>
+        </Compile>
+        <Compile Include="StaticClass.cs">
+          <DependentUpon>Static</DependentUpon>
+        </Compile>
+        <Compile Include="StaticConstructor.cs">
+          <DependentUpon>Static</DependentUpon>
+        </Compile>
+        <Compile Include="StaticMembers.cs">
+          <DependentUpon>Static</DependentUpon>
+        </Compile>
+        <Compile Include="Target-TypedNewExpressions.cs" />
+        <Compile Include="Type.cs">
+          <DependentUpon>Reflection</DependentUpon>
+        </Compile>
+        <Compile Include="Unsafe.cs">
+          <DependentUpon>UnsafeCode_Pointers</DependentUpon>
+        </Compile>
+        <Compile Include="WhereRestrictions.cs">
+          <DependentUpon>GenericTypes_Methods</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="GenericTypes_Methods" />
+      <Content Include="Reflection" />
+      <Content Include="Static" />
+      <Content Include="UnsafeCode_Pointers" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
